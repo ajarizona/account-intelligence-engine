@@ -1,0 +1,338 @@
+{
+  "company": {
+    "name": "Harborview Financial Group",
+    "fictional": true,
+    "industry_id": "retail-banking",
+    "profile": "Harborview Financial Group is a fictional mid-size US regional bank, roughly $40B in assets, serving retail, small business, and commercial customers. Its synthetic filings describe expansion into new Southeast markets and new specialty banking groups, a push toward fee-based revenue, and in the same breath a firm emphasis on disciplined execution, credit quality, and regulatory scrutiny.",
+    "source_note": "Synthetic. Modeled on the shape of a generic regional-bank 10-K. No real institution."
+  },
+  "config_weights": {
+    "strategic_alignment": 0.35,
+    "value_at_stake": 0.3,
+    "time_to_value": 0.2,
+    "evidence_strength": 0.15
+  },
+  "ranked_use_cases": [
+    {
+      "solution_id": "meridian-govern",
+      "solution_name": "Meridian Govern",
+      "primary_objective_id": "risk-compliance",
+      "primary_objective_name": "Risk & Regulatory Compliance",
+      "also_supports": [],
+      "scores": {
+        "strategic_alignment": 0.9,
+        "value_at_stake": 0.7,
+        "time_to_value": 0.9,
+        "evidence_strength": 0.5
+      },
+      "weighted_total": 0.78,
+      "readiness": 1.05,
+      "phase": "crawl",
+      "rationale": "Meridian Govern addresses Risk & Regulatory Compliance."
+    },
+    {
+      "solution_id": "meridian-profile",
+      "solution_name": "Meridian Profile",
+      "primary_objective_id": "acquisition",
+      "primary_objective_name": "Customer Acquisition & Growth",
+      "also_supports": [
+        "Cross-Sell & Share of Wallet",
+        "Customer Retention & Loyalty"
+      ],
+      "scores": {
+        "strategic_alignment": 0.8,
+        "value_at_stake": 0.9,
+        "time_to_value": 0.6,
+        "evidence_strength": 0.5
+      },
+      "weighted_total": 0.745,
+      "readiness": 0.6,
+      "phase": "run",
+      "rationale": "Meridian Profile addresses Customer Acquisition & Growth, and also supports Cross-Sell & Share of Wallet, Customer Retention & Loyalty."
+    },
+    {
+      "solution_id": "meridian-journeys",
+      "solution_name": "Meridian Journeys",
+      "primary_objective_id": "acquisition",
+      "primary_objective_name": "Customer Acquisition & Growth",
+      "also_supports": [
+        "Customer Retention & Loyalty"
+      ],
+      "scores": {
+        "strategic_alignment": 0.8,
+        "value_at_stake": 0.85,
+        "time_to_value": 0.5,
+        "evidence_strength": 0.45
+      },
+      "weighted_total": 0.7025,
+      "readiness": 0.4,
+      "phase": "run",
+      "rationale": "Meridian Journeys addresses Customer Acquisition & Growth, and also supports Customer Retention & Loyalty."
+    },
+    {
+      "solution_id": "meridian-content",
+      "solution_name": "Meridian Content Studio",
+      "primary_objective_id": "operational-efficiency",
+      "primary_objective_name": "Operational Efficiency",
+      "also_supports": [],
+      "scores": {
+        "strategic_alignment": 0.75,
+        "value_at_stake": 0.7,
+        "time_to_value": 0.7,
+        "evidence_strength": 0.5
+      },
+      "weighted_total": 0.6875,
+      "readiness": 0.7,
+      "phase": "walk",
+      "rationale": "Meridian Content Studio addresses Operational Efficiency."
+    },
+    {
+      "solution_id": "meridian-analytics",
+      "solution_name": "Meridian Analytics",
+      "primary_objective_id": "customer-experience",
+      "primary_objective_name": "Customer Experience",
+      "also_supports": [],
+      "scores": {
+        "strategic_alignment": 0.6,
+        "value_at_stake": 0.6,
+        "time_to_value": 0.8,
+        "evidence_strength": 0.45
+      },
+      "weighted_total": 0.6175,
+      "readiness": 0.8,
+      "phase": "crawl",
+      "rationale": "Meridian Analytics addresses Customer Experience."
+    },
+    {
+      "solution_id": "meridian-concierge",
+      "solution_name": "Meridian Concierge",
+      "primary_objective_id": "customer-experience",
+      "primary_objective_name": "Customer Experience",
+      "also_supports": [],
+      "scores": {
+        "strategic_alignment": 0.6,
+        "value_at_stake": 0.6,
+        "time_to_value": 0.65,
+        "evidence_strength": 0.5
+      },
+      "weighted_total": 0.595,
+      "readiness": 0.8,
+      "phase": "walk",
+      "rationale": "Meridian Concierge addresses Customer Experience."
+    }
+  ],
+  "roadmap": {
+    "crawl": [
+      {
+        "solution_id": "meridian-govern",
+        "solution_name": "Meridian Govern",
+        "primary_objective_id": "risk-compliance",
+        "primary_objective_name": "Risk & Regulatory Compliance",
+        "also_supports": [],
+        "scores": {
+          "strategic_alignment": 0.9,
+          "value_at_stake": 0.7,
+          "time_to_value": 0.9,
+          "evidence_strength": 0.5
+        },
+        "weighted_total": 0.78,
+        "readiness": 1.05,
+        "phase": "crawl",
+        "rationale": "Meridian Govern addresses Risk & Regulatory Compliance."
+      },
+      {
+        "solution_id": "meridian-analytics",
+        "solution_name": "Meridian Analytics",
+        "primary_objective_id": "customer-experience",
+        "primary_objective_name": "Customer Experience",
+        "also_supports": [],
+        "scores": {
+          "strategic_alignment": 0.6,
+          "value_at_stake": 0.6,
+          "time_to_value": 0.8,
+          "evidence_strength": 0.45
+        },
+        "weighted_total": 0.6175,
+        "readiness": 0.8,
+        "phase": "crawl",
+        "rationale": "Meridian Analytics addresses Customer Experience."
+      }
+    ],
+    "walk": [
+      {
+        "solution_id": "meridian-concierge",
+        "solution_name": "Meridian Concierge",
+        "primary_objective_id": "customer-experience",
+        "primary_objective_name": "Customer Experience",
+        "also_supports": [],
+        "scores": {
+          "strategic_alignment": 0.6,
+          "value_at_stake": 0.6,
+          "time_to_value": 0.65,
+          "evidence_strength": 0.5
+        },
+        "weighted_total": 0.595,
+        "readiness": 0.8,
+        "phase": "walk",
+        "rationale": "Meridian Concierge addresses Customer Experience."
+      },
+      {
+        "solution_id": "meridian-content",
+        "solution_name": "Meridian Content Studio",
+        "primary_objective_id": "operational-efficiency",
+        "primary_objective_name": "Operational Efficiency",
+        "also_supports": [],
+        "scores": {
+          "strategic_alignment": 0.75,
+          "value_at_stake": 0.7,
+          "time_to_value": 0.7,
+          "evidence_strength": 0.5
+        },
+        "weighted_total": 0.6875,
+        "readiness": 0.7,
+        "phase": "walk",
+        "rationale": "Meridian Content Studio addresses Operational Efficiency."
+      }
+    ],
+    "run": [
+      {
+        "solution_id": "meridian-profile",
+        "solution_name": "Meridian Profile",
+        "primary_objective_id": "acquisition",
+        "primary_objective_name": "Customer Acquisition & Growth",
+        "also_supports": [
+          "Cross-Sell & Share of Wallet",
+          "Customer Retention & Loyalty"
+        ],
+        "scores": {
+          "strategic_alignment": 0.8,
+          "value_at_stake": 0.9,
+          "time_to_value": 0.6,
+          "evidence_strength": 0.5
+        },
+        "weighted_total": 0.745,
+        "readiness": 0.6,
+        "phase": "run",
+        "rationale": "Meridian Profile addresses Customer Acquisition & Growth, and also supports Cross-Sell & Share of Wallet, Customer Retention & Loyalty."
+      },
+      {
+        "solution_id": "meridian-journeys",
+        "solution_name": "Meridian Journeys",
+        "primary_objective_id": "acquisition",
+        "primary_objective_name": "Customer Acquisition & Growth",
+        "also_supports": [
+          "Customer Retention & Loyalty"
+        ],
+        "scores": {
+          "strategic_alignment": 0.8,
+          "value_at_stake": 0.85,
+          "time_to_value": 0.5,
+          "evidence_strength": 0.45
+        },
+        "weighted_total": 0.7025,
+        "readiness": 0.4,
+        "phase": "run",
+        "rationale": "Meridian Journeys addresses Customer Acquisition & Growth, and also supports Customer Retention & Loyalty."
+      }
+    ]
+  },
+  "value_pattern": {
+    "id": "agentic-value-regulated-bank",
+    "name": "Agentic value framing for a regulated bank",
+    "applies_to_industries": [
+      "retail-banking"
+    ],
+    "thesis": "An agentic approach helps a regulated bank grow without growing risk in step. The value comes from purpose-built, governed agents embedded in content, marketing, and service workflows, not from handing work to uncontrolled autonomous systems.",
+    "principles": [
+      "Human in the loop: agents assist and recommend; people stay accountable for regulated decisions.",
+      "Governed by default: data-use and consent rules are enforced at the point of action, with an audit trail.",
+      "Explainable, not black box: every agent action can be traced and reviewed.",
+      "Outcome-anchored: each use case ties to a KPI the bank already funds."
+    ],
+    "maps_to_solutions": [
+      "meridian-concierge",
+      "meridian-govern",
+      "meridian-profile",
+      "meridian-journeys"
+    ],
+    "maps_to_objectives": [
+      {
+        "industry_id": "retail-banking",
+        "objective_id": "customer-experience"
+      },
+      {
+        "industry_id": "retail-banking",
+        "objective_id": "operational-efficiency"
+      },
+      {
+        "industry_id": "retail-banking",
+        "objective_id": "cross-sell"
+      },
+      {
+        "industry_id": "retail-banking",
+        "objective_id": "risk-compliance"
+      }
+    ]
+  },
+  "execution_challenges": [
+    {
+      "id": "data-quality-segmentation",
+      "name": "Data quality and segmentation complexity",
+      "description": "Precise segmentation depends on accurate, complete data across multiple systems, and on integrating external signals cleanly. Gaps and mismatches undermine every downstream use case.",
+      "mitigated_by_solutions": [
+        "meridian-profile",
+        "meridian-govern"
+      ]
+    },
+    {
+      "id": "content-personalization-scale",
+      "name": "Content personalization at scale",
+      "description": "Personalized experiences demand custom content across segments and channels, which can strain creative and development capacity if production is not shortened and governed.",
+      "mitigated_by_solutions": [
+        "meridian-content",
+        "meridian-journeys"
+      ]
+    },
+    {
+      "id": "system-dependencies",
+      "name": "Technology enablement and system dependencies",
+      "description": "Execution spans several platforms and integrations. Activation and tracking must be coordinated across systems, which requires flexibility and delivery bandwidth.",
+      "mitigated_by_solutions": [
+        "meridian-profile",
+        "meridian-journeys",
+        "meridian-analytics"
+      ]
+    },
+    {
+      "id": "measurement-attribution",
+      "name": "Measurement and attribution complexity",
+      "description": "Attributing engagement and conversion to specific tactics is hard when many things move an outcome. Honest measurement claims incremental lift against a holdout, not gross results.",
+      "mitigated_by_solutions": [
+        "meridian-analytics"
+      ]
+    },
+    {
+      "id": "governance-control",
+      "name": "Governance and human-in-the-loop control",
+      "description": "In regulated settings, agent actions must stay inside policy, honor consent, and hand off to a human where accountability is required. Governance is a design requirement, not an afterthought.",
+      "mitigated_by_solutions": [
+        "meridian-govern",
+        "meridian-concierge"
+      ]
+    }
+  ],
+  "strategic_tensions": [
+    {
+      "name": "Lending growth vs. credit quality",
+      "description": "Aggressive loan-book growth inflates volume but pulls against credit quality and the NPL ratio."
+    },
+    {
+      "name": "Deposit gathering vs. cost of funds",
+      "description": "Growing deposits competes with keeping the cost of funds low."
+    },
+    {
+      "name": "Growth investment vs. cost-to-income",
+      "description": "Investing to grow pulls against the cost-to-income ratio, the metric executives watch most closely."
+    }
+  ]
+}

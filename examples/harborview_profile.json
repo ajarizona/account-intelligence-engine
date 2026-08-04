@@ -1,0 +1,47 @@
+{
+  "company": {
+    "name": "Harborview Financial Group",
+    "fictional": true,
+    "industry_id": "retail-banking",
+    "profile": "Harborview Financial Group is a fictional mid-size US regional bank, roughly $40B in assets, serving retail, small business, and commercial customers. Its synthetic filings describe expansion into new Southeast markets and new specialty banking groups, a push toward fee-based revenue, and in the same breath a firm emphasis on disciplined execution, credit quality, and regulatory scrutiny.",
+    "source_note": "Synthetic. Modeled on the shape of a generic regional-bank 10-K. No real institution."
+  },
+  "stated_objectives": [
+    {
+      "objective_id": "risk-compliance",
+      "emphasis": 0.90,
+      "value_signal": 0.70,
+      "evidence": "Filings emphasize regulatory scrutiny and disciplined execution as a moderate-to-low risk appetite."
+    },
+    {
+      "objective_id": "cross-sell",
+      "emphasis": 0.75,
+      "value_signal": 0.90,
+      "evidence": "Push toward fee-based revenue and deeper primary relationships."
+    },
+    {
+      "objective_id": "acquisition",
+      "emphasis": 0.80,
+      "value_signal": 0.80,
+      "evidence": "Expansion into new Southeast markets and specialty banking groups."
+    },
+    {
+      "objective_id": "operational-efficiency",
+      "emphasis": 0.75,
+      "value_signal": 0.70,
+      "evidence": "Cost discipline and cost-to-income focus stated as a priority."
+    },
+    {
+      "objective_id": "customer-experience",
+      "emphasis": 0.60,
+      "value_signal": 0.60,
+      "evidence": "Customer-centric execution named as a strategic pillar."
+    },
+    {
+      "objective_id": "retention",
+      "emphasis": 0.60,
+      "value_signal": 0.70,
+      "evidence": "Deepening primary relationships to protect the funding base."
+    }
+  ]
+}
