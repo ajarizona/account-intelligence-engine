@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "description": "Reusable value patterns and execution-challenge taxonomy for the Account Intelligence Engine. Vendor-agnostic and synthetic. Solutions reference the Meridian catalog by ID; objectives reference the objective layer by ID.",
+  "value_pattern_count": 1,
+  "execution_challenge_count": 5,
+  "value_patterns": [
+    {
+      "id": "agentic-value-regulated-bank",
+      "name": "Agentic value framing for a regulated bank",
+      "applies_to_industries": [
+        "retail-banking"
+      ],
+      "thesis": "An agentic approach helps a regulated bank grow without growing risk in step. The value comes from purpose-built, governed agents embedded in content, marketing, and service workflows, not from handing work to uncontrolled autonomous systems.",
+      "principles": [
+        "Human in the loop: agents assist and recommend; people stay accountable for regulated decisions.",
+        "Governed by default: data-use and consent rules are enforced at the point of action, with an audit trail.",
+        "Explainable, not black box: every agent action can be traced and reviewed.",
+        "Outcome-anchored: each use case ties to a KPI the bank already funds."
+      ],
+      "maps_to_solutions": [
+        "meridian-concierge",
+        "meridian-govern",
+        "meridian-profile",
+        "meridian-journeys"
+      ],
+      "maps_to_objectives": [
+        {
+          "industry_id": "retail-banking",
+          "objective_id": "customer-experience"
+        },
+        {
+          "industry_id": "retail-banking",
+          "objective_id": "operational-efficiency"
+        },
+        {
+          "industry_id": "retail-banking",
+          "objective_id": "cross-sell"
+        },
+        {
+          "industry_id": "retail-banking",
+          "objective_id": "risk-compliance"
+        }
+      ]
+    }
+  ],
+  "execution_challenges": [
+    {
+      "id": "data-quality-segmentation",
+      "name": "Data quality and segmentation complexity",
+      "description": "Precise segmentation depends on accurate, complete data across multiple systems, and on integrating external signals cleanly. Gaps and mismatches undermine every downstream use case.",
+      "mitigated_by_solutions": [
+        "meridian-profile",
+        "meridian-govern"
+      ]
+    },
+    {
+      "id": "content-personalization-scale",
+      "name": "Content personalization at scale",
+      "description": "Personalized experiences demand custom content across segments and channels, which can strain creative and development capacity if production is not shortened and governed.",
+      "mitigated_by_solutions": [
+        "meridian-content",
+        "meridian-journeys"
+      ]
+    },
+    {
+      "id": "system-dependencies",
+      "name": "Technology enablement and system dependencies",
+      "description": "Execution spans several platforms and integrations. Activation and tracking must be coordinated across systems, which requires flexibility and delivery bandwidth.",
+      "mitigated_by_solutions": [
+        "meridian-profile",
+        "meridian-journeys",
+        "meridian-analytics"
+      ]
+    },
+    {
+      "id": "measurement-attribution",
+      "name": "Measurement and attribution complexity",
+      "description": "Attributing engagement and conversion to specific tactics is hard when many things move an outcome. Honest measurement claims incremental lift against a holdout, not gross results.",
+      "mitigated_by_solutions": [
+        "meridian-analytics"
+      ]
+    },
+    {
+      "id": "governance-control",
+      "name": "Governance and human-in-the-loop control",
+      "description": "In regulated settings, agent actions must stay inside policy, honor consent, and hand off to a human where accountability is required. Governance is a design requirement, not an afterthought.",
+      "mitigated_by_solutions": [
+        "meridian-govern",
+        "meridian-concierge"
+      ]
+    }
+  ]
+}
