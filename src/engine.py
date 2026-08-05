@@ -227,9 +227,17 @@ def score_company(profile, objectives, catalog, patterns):
 
     tensions = industries[industry_id]["strategic_tensions"]
 
+    # Echo the stated objectives back, with display names, so downstream
+    # renderers can show what the company told the market it cares about.
+    stated_echo = [
+        {**s, "objective_name": obj_names.get((industry_id, s["objective_id"]), s["objective_id"])}
+        for s in profile["stated_objectives"]
+    ]
+
     return {
         "company": profile["company"],
         "config_weights": weights,
+        "stated_objectives": stated_echo,
         "ranked_use_cases": [asdict(u) for u in ranked],
         "roadmap": {
             "crawl": [asdict(u) for u in sequenced if u.phase == "crawl"],
@@ -275,6 +283,7 @@ def main():
     parser.add_argument("--company", required=True, help="Path to a company profile JSON.")
     parser.add_argument("--out-json", help="Optional path to write the structured result JSON.")
     parser.add_argument("--out-readout", help="Optional path to write the rendered markdown readout.")
+    parser.add_argument("--out-deck", help="Optional path to write a meeting-ready .pptx deck.")
     args = parser.parse_args()
 
     objectives, catalog, patterns = load_data()
@@ -300,6 +309,11 @@ def main():
         from render_readout import render
         Path(args.out_readout).write_text(render(result))
         print(f"Wrote {args.out_readout}")
+
+    if args.out_deck:
+        from render_deck import build_deck
+        build_deck(result, args.out_deck)
+        print(f"Wrote {args.out_deck}")
 
 
 if __name__ == "__main__":

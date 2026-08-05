@@ -1,0 +1,2 @@
+# python-pptx is required only for the .pptx deck output
+python-pptx
