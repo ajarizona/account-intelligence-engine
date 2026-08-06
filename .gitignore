@@ -11,3 +11,6 @@ venv/
 # Editors
 .vscode/
 .idea/
+
+# Real client/vendor work, kept out of the public repo
+private/

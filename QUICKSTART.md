@@ -36,6 +36,10 @@ terminal.
 python run.py --company PATH [options]
 
 --company PATH     Path to a company profile JSON. Required.
+--catalog PATH     Path to a vendor catalog JSON. Defaults to the bundled
+                   fictional Meridian catalog. Point this at your own catalog
+                   (same schema as data/vendor_catalog.json) to run against a
+                   real vendor's solution stack.
 --name NAME        Base name for the output files. Defaults to the profile
                    file name with "_profile" removed.
 --outdir DIR       Directory for output files. Default: examples.
@@ -83,6 +87,20 @@ The wrapper is just the friendlier front door.
    ```
    python run.py --company examples/acme_profile.json
    ```
+
+## Run against your own vendor catalog
+
+The bundled catalog is the fictional Meridian. To use a real vendor's stack,
+build a catalog file in the same schema as `data/vendor_catalog.json`: each
+solution with its capabilities, public proof points, and `maps_to_objectives`
+entries pointing at the objective IDs it addresses. Then pass it in:
+
+```
+python run.py --company examples/acme_profile.json --catalog path/to/your_catalog.json
+```
+
+Keep real catalogs and profiles in a `private/` folder. The included
+`.gitignore` already excludes it, so they never get committed.
 
 ## How the rubric works
 

@@ -96,10 +96,17 @@ class UseCase:
 # Loading
 # ----------------------------------------------------------------------------
 
-def load_data(data_dir: Path = DATA_DIR):
+def load_data(data_dir: Path = DATA_DIR, catalog_path=None):
+    """Load the three data layers.
+
+    catalog_path optionally overrides the default vendor catalog, so the engine
+    can run against a different vendor's solution catalog without editing code.
+    Any catalog must use the same schema and map solutions to objective IDs.
+    """
     with open(data_dir / "objective_layer.json") as f:
         objectives = json.load(f)
-    with open(data_dir / "vendor_catalog.json") as f:
+    catalog_file = Path(catalog_path) if catalog_path else data_dir / "vendor_catalog.json"
+    with open(catalog_file) as f:
         catalog = json.load(f)
     with open(data_dir / "use_case_patterns.json") as f:
         patterns = json.load(f)
@@ -281,12 +288,13 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="Run the Account Intelligence Engine on a company profile.")
     parser.add_argument("--company", required=True, help="Path to a company profile JSON.")
+    parser.add_argument("--catalog", help="Optional path to a vendor catalog JSON. Defaults to the bundled Meridian catalog.")
     parser.add_argument("--out-json", help="Optional path to write the structured result JSON.")
     parser.add_argument("--out-readout", help="Optional path to write the rendered markdown readout.")
     parser.add_argument("--out-deck", help="Optional path to write a meeting-ready .pptx deck.")
     args = parser.parse_args()
 
-    objectives, catalog, patterns = load_data()
+    objectives, catalog, patterns = load_data(catalog_path=args.catalog)
     with open(args.company) as f:
         profile = json.load(f)
 

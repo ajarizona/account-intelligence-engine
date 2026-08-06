@@ -37,6 +37,8 @@ def main():
     )
     p.add_argument("--company", required=True,
                    help="Path to a company profile JSON (e.g. examples/harborview_profile.json).")
+    p.add_argument("--catalog",
+                   help="Optional path to a vendor catalog JSON. Defaults to the bundled Meridian catalog.")
     p.add_argument("--name",
                    help="Base name for the output files. Defaults to the profile file name.")
     p.add_argument("--outdir", default="examples",
@@ -54,7 +56,7 @@ def main():
     outdir = Path(args.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
 
-    objectives, catalog, patterns = load_data()
+    objectives, catalog, patterns = load_data(catalog_path=args.catalog)
     profile = json.loads(company_path.read_text())
     result = score_company(profile, objectives, catalog, patterns)
 

@@ -83,6 +83,24 @@ That reads the company profile, scores the use cases, and writes three files int
 
 To run it on a different company, copy `examples/harborview_profile.json`, edit the company block and the stated objectives to match what that company has said in its public filings, and point `run.py` at the new file. The profile format and the valid industry and objective IDs are documented in `QUICKSTART.md`.
 
+## Adapting this for your own use
+
+The layered design has two deliberate swap points, the company profile and the vendor catalog, so the engine can run on real work without touching the scoring code. The examples shipped here are fictional on purpose; the pattern below is how you would point it at something real.
+
+**Bring your own vendor catalog.** The bundled catalog is a fictional vendor, Meridian. To run against a real vendor, build a catalog in the same schema as `data/vendor_catalog.json`: each solution, its capabilities and public proof points, mapped to the objective IDs it addresses. Then pass it in:
+
+```
+python run.py --company examples/acme_profile.json --catalog path/to/your_catalog.json
+```
+
+A richer, real catalog usually produces better coverage than the demo one, since the demo maps only a few solutions per industry.
+
+**Build profiles from real filings.** The engine scores structured objectives, not raw documents, on purpose: that is what keeps the scoring deterministic and auditable. So a 10-K is the source you distill a profile from, not something the engine reads directly. You can do that distillation by hand, or hand the filing to an assistant and ask it to draft a profile in the documented schema, but a human confirms the emphasis and value reads before scoring. The document informs the profile; a person signs off on the judgment.
+
+**Keep real work private.** Real client and vendor material does not belong in a public repo. The included `.gitignore` already excludes a `/private/` folder, so the intended pattern is to keep real profiles and catalogs in `private/` where git never sees them, and run the same engine against them locally. The public repo stays fictional; your live work stays out of it.
+
+**What this is and is not.** This is a reference implementation, not a finished product. The scoring is transparent rather than magic, and the quality of the output depends on the quality of the catalog and the honesty of the profile inputs. It is meant to be read, understood, and extended.
+
 ## Tech notes
 
 - Written in Python. The engine core and the readout need only the standard library.
