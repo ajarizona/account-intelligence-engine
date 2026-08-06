@@ -63,8 +63,29 @@ I validated the engine on a test run using the public filings of a top-tier US r
 
 This is an abstracted, vendor-agnostic version of work originally built inside live sales engagements. Client names, deal metrics, and any confidential proof points have been removed. What remains is the design: the architecture, the cross-industry objective layer, the rubric, and the generation pipeline. Nothing in this repository overstates a compliance certification or a customer outcome, which is a discipline that matters more in regulated industries than anywhere else.
 
+## Running the engine
+
+Everything runs from the repo root.
+
+Install the one dependency, which is needed only for the .pptx deck:
+
+```
+pip install -r requirements.txt
+```
+
+Run the engine on the worked example:
+
+```
+python run.py --company examples/harborview_profile.json
+```
+
+That reads the company profile, scores the use cases, and writes three files into `examples/`: a structured result (`.json`), a readout (`.md`), and a meeting-ready deck (`.pptx`). Add `--no-deck` to skip the deck if you have not installed python-pptx.
+
+To run it on a different company, copy `examples/harborview_profile.json`, edit the company block and the stated objectives to match what that company has said in its public filings, and point `run.py` at the new file. The profile format and the valid industry and objective IDs are documented in `QUICKSTART.md`.
+
 ## Tech notes
 
-- Document generation runs through a Node.js pipeline for the Word and PowerPoint outputs
-- The cross-industry KPI and objective layer is maintained as structured references, kept separate from any single vendor
-- The scoring rubric is configurable, so the weights can be tuned per vendor or per campaign
+- Written in Python. The engine core and the readout need only the standard library.
+- The .pptx deck is generated with python-pptx, the one external dependency.
+- The cross-industry KPI and objective layer is maintained as structured JSON, kept separate from any single vendor.
+- The scoring rubric is configurable in a single CONFIG block, so the weights can be tuned per vendor or per campaign.
